@@ -13,12 +13,7 @@ const PhotoCards = ({ image }) => {
         <p className="text-green-800 font-bold text-2xl capitalize mb-2">
           photo by : {image.user}
         </p>
-        {/* <p className="text-grey-800 lg:max-w-sm">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum optio
-          nulla distinctio deleniti maxime inventore, vero doloribus beatae
-          nesciunt, asperiores harum similique odit ea unde, autem culpa alias
-          provident voluptates.
-        </p> */}
+
         <ul className="">
           <li>
             <strong>View: </strong>
@@ -34,7 +29,7 @@ const PhotoCards = ({ image }) => {
           </li>
         </ul>
       </div>
-      <div className="py-3 px-3 grid grid-cols-2 gap-2">
+      <div className="py-3 px-3 ">
         {tags.map((tags) => (
           <span
             key={image.id}
