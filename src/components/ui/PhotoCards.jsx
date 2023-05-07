@@ -30,9 +30,9 @@ const PhotoCards = ({ image }) => {
         </ul>
       </div>
       <div className="py-3 px-3 ">
-        {tags.map((tags) => (
+        {tags.map((tags, index) => (
           <span
-            key={image.id}
+            key={index}
             className=" inline-block bg-gray-200 rounded-2xl px-3 m-1 py-2 font-bold text-gray-700 mr-2"
           >
             #{tags}
