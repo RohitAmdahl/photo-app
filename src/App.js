@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Title from "./components/ui/AppTitle";
-import PhotoCards from "./components/ui/photoCards";
+import PhotoCards from "./components/ui/PhotoCards";
 import search from "./images/search.svg";
 
 const ApiUrl = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${searchTerm}&image_type=photo&pretty=true`;
