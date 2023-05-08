@@ -4,7 +4,10 @@ import Title from "./components/ui/AppTitle";
 import PhotoCards from "./components/ui/PhotoCards";
 import ImageSearch from "./components/ui/ImageSearch";
 
-const ApiUrl = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=yellow+flowers&image_type=photo&pretty=true`;
+const Base_Url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}`;
+
+// &q=yellow+flowers&image_type=photo&pretty=true
+// const Url = `&q=${searchTerm}s&image_type=photo&pretty=true`;
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -12,8 +15,10 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const ImagesGallery = async (tags) => {
-      const response = await fetch(`${ApiUrl}&s=${tags}`);
+    const ImagesGallery = async () => {
+      const response = await fetch(
+        `${Base_Url}&q=${searchTerm}s&image_type=photo&pretty=true`
+      );
       const data = await response.json();
       const picture = data.hits;
       console.log(picture);
