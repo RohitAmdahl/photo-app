@@ -13,7 +13,9 @@ function App() {
   // eslint-disable-next-line no-unused-vars
   const [images, setImages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  /**
+   * api call useeffect hook function
+   */
   useEffect(() => {
     const ImagesGallery = async () => {
       const response = await fetch(
@@ -31,6 +33,11 @@ function App() {
     <>
       <Title />
       <ImageSearch searchText={(text) => setSearchTerm(text)} />
+      {images.length === 0 && (
+        <h1 className="text-4xl font-bold mx-auto text-center">
+          No image found
+        </h1>
+      )}
       <div className="container mx-auto flex justify-items-center">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-5xl ">
           {images.map((images) => (
