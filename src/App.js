@@ -23,7 +23,6 @@ function App() {
       );
       const data = await response.json();
       const picture = data.hits;
-      console.log(picture);
       setImages(picture);
     };
     ImagesGallery();
